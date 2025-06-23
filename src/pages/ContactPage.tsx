@@ -87,7 +87,7 @@ const ContactPage: React.FC = () => {
               Get in Touch
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Ready to transform your business with Matrix's innovative solutions? We're here to help you get started.
+              Ready to transform your business with MatrixAI's innovative solutions? We're here to help you get started.
             </p>
           </motion.div>
         </div>
@@ -358,7 +358,7 @@ const ContactPage: React.FC = () => {
               Ready to Get Started?
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">
-              Join thousands of users already transforming their work with Matrix's innovative platforms.
+              Join thousands of users already transforming their work with MatrixAI's innovative platforms.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.button

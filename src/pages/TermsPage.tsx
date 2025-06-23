@@ -48,7 +48,7 @@ const TermsPage: React.FC = () => {
         },
         {
           subtitle: 'Matrix Twin Platform',
-          text: 'A digital construction management platform featuring digital twin technology, IoT integration, project monitoring, team collaboration tools, and AI-powered insights for construction projects.'
+          text: 'A digital construction management platform featuring digital twin technology, IoT integration, project monitoring, team collaboration tools, and AI-powered insights for construction products.'
         },
         {
           subtitle: 'MatrixAI Platform',

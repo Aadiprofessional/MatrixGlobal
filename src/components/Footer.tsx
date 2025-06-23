@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  Sparkles, 
   Mail, 
   Phone, 
   MapPin, 
@@ -10,17 +9,19 @@ import {
   Linkedin, 
   Instagram,
   ExternalLink,
-  Facebook
+  Facebook,
+  ArrowUpRight
 } from 'lucide-react';
+import MatrixLogo from '../assets/MatrixAI Logo.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const projects = [
-    { name: 'MatrixEdu', url: 'https://matrixedu.ai/' },
-    { name: 'Matrix Twin', url: 'https://matrixtwin.com/login' },
-    { name: 'MatrixAI', url: 'https://matrixai.asia/' },
-    { name: 'AI Toy', url: 'https://aitoy.matrix.com' },
+  const products = [
+    { name: 'MatrixAI', href: 'https://matrixai.asia/', description: 'AI Platform' },
+    { name: 'Matrix Twin', href: 'https://matrixtwin.com/', description: 'Construction Tech' },
+    { name: 'MatrixEdu', href: 'https://matrixedu.ai/', description: 'Education Platform' },
+    { name: 'AI Toy', href: 'https://aitoy.matrix.com/', description: 'Interactive Toys' },
   ];
 
   const socialLinks = [
@@ -67,10 +68,14 @@ const Footer: React.FC = () => {
             {/* Logo and Description */}
             <motion.div variants={itemVariants} className="text-center mb-8">
               <Link to="/" className="flex items-center justify-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={MatrixLogo} 
+                    alt="Matrix AI Ecosystem" 
+                    className="w-full h-full object-contain filter brightness-0 invert"
+                  />
                 </div>
-                <span className="text-2xl font-bold gradient-text">Matrix</span>
+                <span className="text-2xl font-bold gradient-text">MatrixAI</span>
               </Link>
               <p className="text-gray-300 text-sm leading-relaxed max-w-xs mx-auto mb-6">
                 Pioneering the future with cutting-edge AI solutions and innovative technology platforms.
@@ -124,12 +129,12 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-lg font-semibold mb-4 text-white text-center">Our Projects</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white text-center">Our Products</h3>
               <div className="grid grid-cols-2 gap-3">
-                {projects.map((project) => (
+                {products.map((product) => (
                   <motion.a
-                    key={project.name}
-                    href={project.url}
+                    key={product.name}
+                    href={product.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:border-white/20 transition-all duration-300 text-center group"
@@ -137,7 +142,7 @@ const Footer: React.FC = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
-                      {project.name}
+                      {product.name}
                     </span>
                     <ExternalLink className="w-3 h-3 mx-auto mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.a>
@@ -170,7 +175,7 @@ const Footer: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 text-center">
                 {[
                   { name: 'Home', href: '/' },
-                  { name: 'Projects', href: '/projects' },
+                  { name: 'Products', href: '/projects' },
                   { name: 'About', href: '/about' },
                   { name: 'Contact', href: '/contact' }
                 ].map((link) => (
@@ -188,7 +193,7 @@ const Footer: React.FC = () => {
             {/* Copyright */}
             <motion.div variants={itemVariants} className="text-center pt-6 border-t border-white/10">
               <p className="text-gray-400 text-xs mb-4">
-                © {currentYear} Matrix. All rights reserved.
+                © {currentYear} MatrixAI. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-xs">
                 <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
@@ -215,10 +220,14 @@ const Footer: React.FC = () => {
               {/* Company Info */}
               <motion.div variants={itemVariants} className="lg:col-span-1">
                 <Link to="/" className="flex items-center space-x-2 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <Sparkles className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={MatrixLogo} 
+                      alt="Matrix AI Ecosystem" 
+                      className="w-full h-full object-contain filter brightness-0 invert"
+                    />
                   </div>
-                  <span className="text-2xl font-bold gradient-text">Matrix</span>
+                  <span className="text-2xl font-bold gradient-text">MatrixAI</span>
                 </Link>
                 
                 <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
@@ -243,25 +252,26 @@ const Footer: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Projects */}
+              {/* Products */}
               <motion.div variants={itemVariants}>
-                <h3 className="text-lg font-semibold mb-6 text-white">Our Projects</h3>
-                <ul className="space-y-3">
-                  {projects.map((project) => (
-                    <li key={project.name}>
-                      <motion.a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors group"
-                        whileHover={{ x: 5 }}
-                      >
-                        <span>{project.name}</span>
-                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </motion.a>
-                    </li>
+                <h3 className="text-lg font-semibold mb-6 text-white">Our Products</h3>
+                <div className="space-y-4">
+                  {products.map((product) => (
+                    <motion.a
+                      key={product.name}
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ x: 5 }}
+                      className="block group"
+                    >
+                      <span className="text-gray-300 hover:text-white transition-colors duration-200 text-center group-hover:text-indigo-300">
+                        {product.name}
+                      </span>
+                      <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </motion.a>
                   ))}
-                </ul>
+                </div>
               </motion.div>
 
               {/* Quick Links */}
@@ -279,9 +289,10 @@ const Footer: React.FC = () => {
                   <li>
                     <Link 
                       to="/projects" 
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
                     >
-                      Projects
+                      Products
+                      <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </li>
                   <li>
@@ -351,7 +362,7 @@ const Footer: React.FC = () => {
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p className="text-gray-400 text-sm">
-                  © {currentYear} Matrix. All rights reserved. Built with ❤️ for the future.
+                  © {currentYear} MatrixAI. All rights reserved. Built with ❤️ for the future.
                 </p>
                 
                 <div className="flex items-center space-x-6">

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, ArrowRight, Sparkles } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
+import MatrixLogo from '../assets/MatrixAI Logo.png';
 
 const LoginPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,13 +46,17 @@ const LoginPage: React.FC = () => {
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+                <img 
+                  src={MatrixLogo} 
+                  alt="Matrix AI Ecosystem" 
+                  className="w-full h-full object-contain filter brightness-0 invert"
+                />
               </div>
-              <span className="text-2xl font-bold gradient-text">Matrix</span>
+              <span className="text-2xl font-bold gradient-text">MatrixAI</span>
             </Link>
             
             <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
-            <p className="text-gray-400">Sign in to access your Matrix account</p>
+            <p className="text-gray-400">Sign in to access your MatrixAI account</p>
           </div>
 
           {/* Login Form */}

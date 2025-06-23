@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import MatrixLogo from '../assets/MatrixAI Logo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Projects', path: '/projects' },
+    { name: 'Products', path: '/projects' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -45,13 +46,17 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <motion.div
-              whileHover={{ rotate: 180 }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
-              className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center"
+              className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden"
             >
-              <Sparkles className="w-5 h-5 text-white" />
+              <img 
+                src={MatrixLogo} 
+                alt="Matrix AI Ecosystem" 
+                className="w-full h-full object-contain filter brightness-0 invert"
+              />
             </motion.div>
-            <span className="text-xl font-bold gradient-text">Matrix</span>
+            <span className="text-xl font-bold gradient-text">MatrixAI</span>
           </Link>
 
           {/* Desktop Navigation */}

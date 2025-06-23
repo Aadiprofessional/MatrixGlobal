@@ -11,8 +11,8 @@ const TechStack: React.FC = () => {
     { name: 'Python', icon: '🐍', color: 'from-yellow-400 to-orange-500' },
     { name: 'TailwindCSS', icon: '🎨', color: 'from-teal-400 to-blue-500' },
     { name: 'Framer Motion', icon: '✨', color: 'from-pink-400 to-purple-500' },
-    { name: 'OpenAI', icon: '🧠', color: 'from-indigo-500 to-purple-600' },
-    { name: 'Supabase', icon: '⚡', color: 'from-green-400 to-teal-500' },
+    { name: 'Custom LLM', icon: '🧠', color: 'from-indigo-500 to-purple-600' },
+    { name: 'Cloud Base', icon: '⚡', color: 'from-green-400 to-teal-500' },
     { name: 'IoT', icon: '📡', color: 'from-orange-400 to-red-500' },
     { name: 'WebGL', icon: '🌐', color: 'from-cyan-500 to-blue-600' },
   ];

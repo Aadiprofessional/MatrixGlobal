@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const projects = [
+  const products = [
     {
       id: 'matrix-edu',
       title: 'MatrixEdu',
@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
         'AI-Powered Tutoring & Study Assistant',
         'Interactive Courses & Video Lectures',
         'Scholarship Finder & Application Tracker',
-        'Case Studies & Real-world Projects',
+        'Case Studies & Real-world Products',
         'Personalized Learning Paths',
         'Progress Analytics & Insights'
       ],
@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
         'Speech-to-Text & Transcription',
         'AI Text Humanizer & Detector'
       ],
-      tech: ['React', 'AI/ML', 'OpenAI', 'Computer Vision', 'NLP'],
+      tech: ['React', 'AI/ML', 'Custom LLM', 'Computer Vision', 'NLP'],
       liveUrl: 'https://matrixai.asia/',
       appStoreUrl: 'https://apps.apple.com/app/matrixai',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.matrixai',
@@ -134,7 +134,7 @@ const HomePage: React.FC = () => {
             </div>
             
             <h1 className="text-6xl md:text-8xl font-bold mb-6">
-              <span className="gradient-text-rainbow">Matrix</span>
+              <span className="gradient-text-rainbow">MatrixAI</span>
               <br />
               <span className="text-white">Ecosystem</span>
             </h1>
@@ -155,9 +155,9 @@ const HomePage: React.FC = () => {
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(99, 102, 241, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-semibold text-lg flex items-center gap-2 hover:from-indigo-600 hover:to-purple-700 transition-all duration-300"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Explore Projects
+              Explore Products
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
             
@@ -192,8 +192,8 @@ const HomePage: React.FC = () => {
       {/* Stats Section */}
       <StatsSection />
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 relative">
+      {/* Products Section */}
+      <section id="products" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -204,26 +204,17 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="gradient-text">Projects</span>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Our <span className="gradient-text">Products</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our revolutionary suite of AI-powered applications that are transforming 
-              industries and creating the future of technology.
+              Innovative solutions that push the boundaries of technology and transform industries.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
+            {products.map((product, index) => (
+              <ProjectCard key={product.id} project={product} />
             ))}
           </div>
         </div>
@@ -245,10 +236,10 @@ const HomePage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-bold mb-6">
-                About <span className="gradient-text">Matrix</span>
+                About <span className="gradient-text">MatrixAI</span>
               </h2>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                Matrix is at the forefront of technological innovation, creating revolutionary solutions 
+                MatrixAI is at the forefront of technological innovation, creating revolutionary solutions 
                 that bridge the gap between artificial intelligence and real-world applications. Our 
                 ecosystem encompasses education, construction, AI services, and interactive experiences.
               </p>
@@ -322,8 +313,8 @@ const HomePage: React.FC = () => {
               Ready to Experience the <span className="gradient-text">Future</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join thousands of users who are already transforming their work and learning 
-              with Matrix's revolutionary AI-powered platforms.
+              Join thousands of users already transforming their work 
+              with MatrixAI's revolutionary AI-powered platforms.
             </p>
             
             <motion.button

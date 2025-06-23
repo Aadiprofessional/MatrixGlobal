@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import MatrixLogo from '../assets/MatrixAI Logo.png';
 
 const LoadingScreen: React.FC = () => {
   return (
@@ -21,12 +21,17 @@ const LoadingScreen: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="w-20 h-20 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
+          <div className="w-20 h-20 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 p-2">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              className="w-full h-full flex items-center justify-center"
             >
-              <Sparkles className="w-10 h-10 text-white" />
+              <img 
+                src={MatrixLogo} 
+                alt="Matrix AI Ecosystem" 
+                className="w-full h-full object-contain filter brightness-0 invert"
+              />
             </motion.div>
           </div>
         </motion.div>
@@ -38,7 +43,7 @@ const LoadingScreen: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-4xl font-bold mb-4"
         >
-          <span className="gradient-text-rainbow">Matrix</span>
+          <span className="gradient-text-rainbow">MatrixAI</span>
         </motion.h1>
 
         {/* Loading Text */}

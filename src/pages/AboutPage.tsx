@@ -53,7 +53,7 @@ const AboutPage: React.FC = () => {
     {
       year: "2020",
       title: "Company Founded",
-      description: "Matrix was born with a vision to revolutionize technology solutions."
+      description: "MatrixAI was born with a vision to revolutionize technology solutions."
     },
     {
       year: "2021",
@@ -90,7 +90,7 @@ const AboutPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              About Matrix
+              About MatrixAI
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
               We're a technology company dedicated to creating innovative solutions that transform industries and empower people worldwide.
@@ -107,13 +107,13 @@ const AboutPage: React.FC = () => {
                 Our Story
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Matrix began as a vision to bridge the gap between cutting-edge technology and real-world applications. Founded by a team of passionate developers and innovators, we set out to create solutions that not only showcase technological prowess but also solve genuine problems.
+                MatrixAI began as a vision to bridge the gap between cutting-edge technology and real-world applications. Founded by a team of passionate developers and innovators, we set out to create solutions that not only showcase technological prowess but also solve genuine problems.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 From AI-powered platforms to educational tools, construction management systems to interactive toys, we've consistently pushed the boundaries of what's possible. Our diverse portfolio reflects our commitment to innovation across multiple industries.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Today, Matrix stands as a testament to the power of technology when applied with purpose, creativity, and a deep understanding of user needs.
+                Today, MatrixAI stands as a testament to the power of technology when applied with purpose, creativity, and a deep understanding of user needs.
               </p>
             </motion.div>
 
@@ -152,7 +152,7 @@ const AboutPage: React.FC = () => {
               Our Values
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The principles that guide everything we do at Matrix.
+              The principles that guide everything we do at MatrixAI.
             </p>
           </motion.div>
 
@@ -272,7 +272,7 @@ const AboutPage: React.FC = () => {
               Join Our Journey
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Be part of the future we're building. Whether you're a user, partner, or potential team member, there's a place for you in the Matrix ecosystem.
+              Be part of the future we're building. Whether you're a user, partner, or potential team member, there's a place for you in the MatrixAI ecosystem.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium">

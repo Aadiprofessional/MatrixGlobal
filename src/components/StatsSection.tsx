@@ -14,8 +14,8 @@ const StatsSection: React.FC = () => {
     {
       icon: <Code className="w-8 h-8" />,
       value: '4',
-      label: 'Major Projects',
-      description: 'Revolutionary solutions',
+      label: 'Major Products',
+      description: 'Revolutionary platforms transforming industries',
       color: 'from-green-500 to-emerald-500'
     },
     {
