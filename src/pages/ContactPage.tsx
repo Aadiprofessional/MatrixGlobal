@@ -264,10 +264,10 @@ const ContactPage: React.FC = () => {
                       For general inquiries and support
                     </p>
                     <a 
-                      href="mailto:info@matrixedu.com" 
+                      href="mailto:info@matrixaiglobal.com" 
                       className="text-pink-400 hover:text-pink-300 transition-colors font-medium"
                     >
-                      info@matrixedu.com
+                      info@matrixaiglobal.com
                     </a>
                   </div>
                 </div>

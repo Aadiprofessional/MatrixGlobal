@@ -1,7 +1,7 @@
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Sparkles, Zap, Globe, Brain, Building, GraduationCap, Gamepad2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Globe, Brain, Building, GraduationCap, Gamepad2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
@@ -11,9 +11,35 @@ import TechStack from '../components/TechStack';
 import StatsSection from '../components/StatsSection';
 import ParticleField from '../components/ParticleField';
 
+// Product Images
+import MatrixEduImage from '../assets/MatrixEdu.png';
+import MatrixTwinImage from '../assets/MatrixTwin.png';
+import MatrixAIImage from '../assets/MatrixAI.png';
+
 const HomePage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Product images for the slider
+  const productImages = [
+    { image: MatrixEduImage, name: 'MatrixEdu' },
+    { image: MatrixTwinImage, name: 'Matrix Twin' },
+    { image: MatrixAIImage, name: 'MatrixAI' },
+    { image: MatrixAIImage, name: 'AI Toy' } // Using MatrixAI image as placeholder for AI Toy
+  ];
+
+  // Auto-cycle through images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % productImages.length
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [productImages.length]);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -21,6 +47,18 @@ const HomePage: React.FC = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex + 1) % productImages.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? productImages.length - 1 : prevIndex - 1
+    );
+  };
 
   const products = [
     {
@@ -40,7 +78,7 @@ const HomePage: React.FC = () => {
       ],
       tech: ['React', 'TypeScript', 'AI/ML', 'Three.js', 'Framer Motion'],
       liveUrl: 'https://matrixedu.ai/',
-      image: '/images/matrix-edu-preview.jpg'
+      image: MatrixEduImage
     },
     {
       id: 'matrix-twin',
@@ -59,7 +97,7 @@ const HomePage: React.FC = () => {
       ],
       tech: ['React', 'TypeScript', '3D Models', 'IoT', 'Real-time Data'],
       liveUrl: 'https://matrixtwin.com/login',
-      image: '/images/matrix-twin-preview.jpg'
+      image: MatrixTwinImage
     },
     {
       id: 'matrix-ai',
@@ -80,7 +118,7 @@ const HomePage: React.FC = () => {
       liveUrl: 'https://matrixai.asia/',
       appStoreUrl: 'https://apps.apple.com/app/matrixai',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.matrixai',
-      image: '/images/matrix-ai-preview.jpg'
+      image: MatrixAIImage
     },
     {
       id: 'ai-toy',
@@ -269,12 +307,55 @@ const HomePage: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 p-8">
-                <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl font-bold mb-4">4</div>
-                    <div className="text-xl">Revolutionary</div>
-                    <div className="text-xl">Products</div>
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 p-4">
+                {/* Image Slider */}
+                <div className="relative w-full h-full rounded-xl overflow-hidden bg-gray-800/50">
+                  <img 
+                    src={productImages[currentImageIndex].image} 
+                    alt={`${productImages[currentImageIndex].name} preview`}
+                    className="w-full h-full object-cover transition-all duration-500"
+                  />
+                  
+                  {/* Navigation Buttons */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors backdrop-blur-sm border border-white/20"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-white" />
+                  </button>
+                  
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors backdrop-blur-sm border border-white/20"
+                  >
+                    <ChevronRight className="w-5 h-5 text-white" />
+                  </button>
+                  
+                  {/* Image Indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    {productImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  
+                  {/* Product Name Overlay */}
+                  <div className="absolute top-4 left-4 px-3 py-2 bg-black/50 rounded-lg backdrop-blur-sm border border-white/20">
+                    <div className="text-white font-semibold text-sm">
+                      {productImages[currentImageIndex].name}
+                    </div>
+                  </div>
+                  
+                  {/* Products Counter */}
+                  <div className="absolute top-4 right-4 px-3 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg backdrop-blur-sm">
+                    <div className="text-white font-bold text-sm">
+                      4 Revolutionary Products
+                    </div>
                   </div>
                 </div>
               </div>

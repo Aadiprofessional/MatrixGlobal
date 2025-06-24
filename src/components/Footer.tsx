@@ -119,8 +119,8 @@ const Footer: React.FC = () => {
                     Email
                   </p>
                   <div className="text-center">
-                    <a href="mailto:info@matrixedu.com" className="text-pink-400 hover:text-pink-300 transition-colors duration-300 text-sm">
-                      info@matrixedu.com
+                    <a href="mailto:info@matrixaiglobal.com" className="text-pink-400 hover:text-pink-300 transition-colors duration-300 text-sm">
+                      info@matrixaiglobal.com
                     </a>
                   </div>
                 </div>
@@ -347,8 +347,8 @@ const Footer: React.FC = () => {
                       Email
                     </p>
                     <p className="text-sm">
-                      <a href="mailto:info@matrixedu.com" className="text-pink-400 hover:text-pink-300 transition-colors duration-300">
-                        info@matrixedu.com
+                      <a href="mailto:info@matrixaiglobal.com" className="text-pink-400 hover:text-pink-300 transition-colors duration-300">
+                        info@matrixaiglobal.com
                       </a>
                     </p>
                   </div>

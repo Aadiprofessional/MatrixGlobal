@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Download, Play, Star, Users, Code, Zap, ChevronLeft, ChevronRight, Image } from 'lucide-react';
 
+// Product Images
+import MatrixEduImage from '../assets/MatrixEdu.png';
+import MatrixTwinImage from '../assets/MatrixTwin.png';
+import MatrixAIImage from '../assets/MatrixAI.png';
+
 const ProjectsPage: React.FC = () => {
   const products = [
     {
@@ -10,12 +15,12 @@ const ProjectsPage: React.FC = () => {
       category: "AI Platform",
       description: "Advanced AI platform with chat, image generation, video creation, and content writing capabilities.",
       longDescription: "MatrixAI is a comprehensive AI-powered platform that brings together the latest in artificial intelligence technology. From intelligent conversations to creative content generation, it's your all-in-one AI assistant.",
-      image: "/api/placeholder/600/400",
+      image: MatrixAIImage,
       productPhotos: [
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400"
+        MatrixAIImage,
+        MatrixAIImage,
+        MatrixAIImage,
+        MatrixAIImage
       ],
       features: [
         "Advanced AI Chat & Conversations",
@@ -47,11 +52,11 @@ const ProjectsPage: React.FC = () => {
       category: "Construction Tech",
       description: "Digital twin technology for construction project management with IoT integration and real-time monitoring.",
       longDescription: "Matrix Twin revolutionizes construction project management through digital twin technology, providing real-time insights, IoT integration, and comprehensive project analytics.",
-      image: "/api/placeholder/600/400",
+      image: MatrixTwinImage,
       productPhotos: [
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400"
+        MatrixTwinImage,
+        MatrixTwinImage,
+        MatrixTwinImage
       ],
       features: [
         "Digital Twin Technology",
@@ -83,13 +88,13 @@ const ProjectsPage: React.FC = () => {
       category: "Education Platform",
       description: "AI-powered educational platform with tutoring, courses, scholarships, and personalized learning paths.",
       longDescription: "MatrixEdu transforms education through AI-powered personalized learning, offering comprehensive tutoring, course management, and scholarship opportunities.",
-      image: "/api/placeholder/600/400",
+      image: MatrixEduImage,
       productPhotos: [
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400"
+        MatrixEduImage,
+        MatrixEduImage,
+        MatrixEduImage,
+        MatrixEduImage,
+        MatrixEduImage
       ],
       features: [
         "AI-powered Tutoring",
@@ -121,11 +126,11 @@ const ProjectsPage: React.FC = () => {
       category: "Interactive Toys",
       description: "AI-based interactive toys for kids with voice conversations and educational activities.",
       longDescription: "AI Toy brings artificial intelligence to children's playtime, creating interactive, educational, and engaging experiences that grow with your child.",
-      image: "/api/placeholder/600/400",
+      image: MatrixAIImage,
       productPhotos: [
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400",
-        "/api/placeholder/600/400"
+        MatrixAIImage,
+        MatrixAIImage,
+        MatrixAIImage
       ],
       features: [
         "Voice Conversations",

@@ -62,6 +62,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </motion.button>
         </div>
 
+        {/* Product Image */}
+        <div className="mb-4 sm:mb-6">
+          <div className="aspect-video rounded-xl overflow-hidden bg-gray-800/50 border border-white/10">
+            <img 
+              src={project.image} 
+              alt={`${project.title} preview`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
         {/* Description */}
         <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
           {project.description}

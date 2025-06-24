@@ -61,7 +61,7 @@ const StatsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -73,27 +73,29 @@ const StatsSection: React.FC = () => {
                 scale: 1.05,
                 rotateY: 5
               }}
-              className="group relative"
+              className="group relative h-full"
             >
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 hover:border-white/20 transition-all duration-500">
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-white/10 hover:border-white/20 transition-all duration-500 h-full flex flex-col justify-between min-h-[200px] md:min-h-[220px] lg:min-h-[240px]">
                 {/* Icon */}
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  {stat.icon}
-                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`inline-flex p-2 md:p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    {stat.icon}
+                  </div>
 
-                {/* Value */}
-                <div className={`text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                  {stat.value}
-                </div>
+                  {/* Value */}
+                  <div className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                    {stat.value}
+                  </div>
 
-                {/* Label */}
-                <div className="text-lg font-semibold text-white mb-1">
-                  {stat.label}
-                </div>
+                  {/* Label */}
+                  <div className="text-base md:text-lg font-semibold text-white mb-1">
+                    {stat.label}
+                  </div>
 
-                {/* Description */}
-                <div className="text-sm text-gray-400">
-                  {stat.description}
+                  {/* Description */}
+                  <div className="text-xs md:text-sm text-gray-400 text-center">
+                    {stat.description}
+                  </div>
                 </div>
 
                 {/* Hover Glow Effect */}
